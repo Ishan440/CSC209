@@ -6,7 +6,7 @@ int main(int argc, char **argv)
 
     if (argc != 2 || (n = atoi(argv[1])) <= 0) {
         fprintf(stderr, "usage: %s n\nn must be a positive integer\n", argv[0]);
-        return(1);
+        return(1);}
     while (n != 1)
     {
         if (n%2 == 0){
@@ -18,5 +18,5 @@ int main(int argc, char **argv)
         printf("%d\n", n);
     }
     
-    }
+    
 }
