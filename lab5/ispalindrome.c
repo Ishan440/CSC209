@@ -5,11 +5,12 @@
 #include <string.h>
   
 
-int main (int argc, char * argv[]) 
+int main(int argc, char ** argv) 
 {   
+    printf("%s", argv[1]);
 
     if (argc != 2 ) {
-        fprintf(stderr, "usage: ispalindrome sentence here\n", argv[0]);
+        fprintf(stderr, "usage: %s \nusage: ispalindrome sentence here\n", argv[0]);
         return(1);
     }
 
