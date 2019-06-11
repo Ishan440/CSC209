@@ -7,10 +7,9 @@
 
 int main (int argc, char * argv[]) 
 {   
-    int n;
 
-    if (argc != 2 || (n = atoi(argv[1])) <= 0) {
-        fprintf(stderr, "usage: %s n\nispalindrome sentence here\n", argv[0]);
+    if (argc != 2 ) {
+        fprintf(stderr, "usage: ispalindrome sentence here\n", argv[0]);
         return(1);
     }
 
