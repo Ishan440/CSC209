@@ -2,12 +2,14 @@
 #include <string.h>
 #include <stdlib.h>
 
+#define SIZE 10
+
 int parsepath(char *path, char **result, int size)
 {
     char *dot = ".";
     int j;
     int path_len=strlen(path);
-    int num_colon=0;
+    int num_col=0;
     int current_colon = 0;
     int num_items=0;
     for (j=0;j<path_len;j++)
@@ -21,14 +23,11 @@ int parsepath(char *path, char **result, int size)
     }
 
     // allocate the result array
-    if (num_col > size) {
-        result + size =malloc((size+1) * size);
-        result[size + 1] = '\0';
-    }
+    
     result[0] = path;  // first path
 
     // rest of paths
-    for (j=0;j<len;j++)
+    for (j=0;j<path_len;j++)
     {
         if (path[j]=='\0')
         {
