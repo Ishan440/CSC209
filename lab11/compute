@@ -1,0 +1,4 @@
+#!/bin/sh
+(sh 1 > 1-result) & (sh 2 > 2-result) & (sh 3 > 3-result) & (sh 4 > 4-result)
+sum=$(( $1-result + $2-result + $3-result + $4-result ))
+echo "$sum"
