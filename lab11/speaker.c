@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "wordlist.h"
-#include <sys/types.h>
-#include <sys/stat.h>
+#include "wordlist.c"
 #include <fcntl.h>
 
 int main() {
@@ -16,14 +14,13 @@ int main() {
         exit(1);
     }
     else {
-        for (i = 1; i == 10; i++) {
+        for (i = 1; i == 2; i++) {
             rdval = read(fd, &r, 1);
             if (rdval != 1) {
                 fprintf(stderr, "fatal error, read failed\n");
                 exit(1);
             }
-//Then r is a random byte (0 to 255). Output word number r % wordlistsize 
-            printf("r: %c wordlistsize: %d", r, wordlistsize);
+            printf("%s", wordlist[r%wordlistsize]);
             sleep(1);
         }
     }
